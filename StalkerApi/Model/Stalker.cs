@@ -6,7 +6,7 @@ public class Stalker
     public string Surname { get; set; }
     public string Nickname { get; set; }
     public StalkerStatus Status { get; set; }
-    public Location CurrentLocation { get; set; }
+    public int CurrentLocationID { get; set; }
 }
 
 public enum StalkerStatus
