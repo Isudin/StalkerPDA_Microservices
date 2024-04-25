@@ -1,6 +1,6 @@
 @StalkerApi_HostAddress = http://localhost:5117
 
-GET {{StalkerApi_HostAddress}}/weatherforecast/
+GET {{StalkerApi_HostAddress}}/
 Accept: application/json
 
 ###
