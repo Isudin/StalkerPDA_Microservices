@@ -8,6 +8,7 @@ public class Stalker
     public string Nickname { get; set; }
     public StalkerStatus Status { get; set; }
     public int CurrentLocationID { get; set; }
+    public int ReputationPoints { get; set; }
 }
 
 public enum StalkerStatus
