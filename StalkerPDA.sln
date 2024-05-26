@@ -3,17 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StalkerApi", "StalkerApi\StalkerApi.csproj", "{065DB69C-82F7-4619-B350-2CBF202B067A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StalkerApi", "StalkerApi\StalkerApi.csproj", "{065DB69C-82F7-4619-B350-2CBF202B067A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactionApi", "FactionApi\FactionApi.csproj", "{307CD571-1611-4FFF-AA56-43C0C2F1A383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactionApi", "FactionApi\FactionApi.csproj", "{307CD571-1611-4FFF-AA56-43C0C2F1A383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactionApiTests", "FactionApiTests\FactionApiTests.csproj", "{D21DEAAE-8540-492F-A139-7B6893668343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactionApiTests", "FactionApiTests\FactionApiTests.csproj", "{D21DEAAE-8540-492F-A139-7B6893668343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StalkerApiTests", "StalkerApiTests\StalkerApiTests.csproj", "{A38CB3CA-E902-4371-B1DE-96FE52E2EFFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StalkerApiTests", "StalkerApiTests\StalkerApiTests.csproj", "{A38CB3CA-E902-4371-B1DE-96FE52E2EFFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationApi", "LocationApi\LocationApi.csproj", "{581A2062-3AEF-4B6C-BD2A-673746C11548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocationApi", "LocationApi\LocationApi.csproj", "{581A2062-3AEF-4B6C-BD2A-673746C11548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationApiTests", "LocationApiTests\LocationApiTests.csproj", "{7703CB4E-04BD-4875-A184-317C338F3AE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocationApiTests", "LocationApiTests\LocationApiTests.csproj", "{7703CB4E-04BD-4875-A184-317C338F3AE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{80CBB9BD-C21A-474E-A870-EA0BBB13D6B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stalker", "Stalker", "{A01EDD27-F837-4FDB-ABDE-1F6F4F2DB44C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Faction", "Faction", "{A7429651-D5BF-428F-8C8A-F78A7136D50D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Location", "Location", "{5DA8024B-929B-4D67-B735-1973053D6F55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4AF49114-CBAF-4F77-9745-FAF689FADDF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,9 +59,18 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{065DB69C-82F7-4619-B350-2CBF202B067A} = {A01EDD27-F837-4FDB-ABDE-1F6F4F2DB44C}
+		{307CD571-1611-4FFF-AA56-43C0C2F1A383} = {A7429651-D5BF-428F-8C8A-F78A7136D50D}
+		{D21DEAAE-8540-492F-A139-7B6893668343} = {4AF49114-CBAF-4F77-9745-FAF689FADDF3}
+		{A38CB3CA-E902-4371-B1DE-96FE52E2EFFB} = {4AF49114-CBAF-4F77-9745-FAF689FADDF3}
+		{581A2062-3AEF-4B6C-BD2A-673746C11548} = {5DA8024B-929B-4D67-B735-1973053D6F55}
+		{7703CB4E-04BD-4875-A184-317C338F3AE2} = {4AF49114-CBAF-4F77-9745-FAF689FADDF3}
+		{A01EDD27-F837-4FDB-ABDE-1F6F4F2DB44C} = {80CBB9BD-C21A-474E-A870-EA0BBB13D6B4}
+		{A7429651-D5BF-428F-8C8A-F78A7136D50D} = {80CBB9BD-C21A-474E-A870-EA0BBB13D6B4}
+		{5DA8024B-929B-4D67-B735-1973053D6F55} = {80CBB9BD-C21A-474E-A870-EA0BBB13D6B4}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2703EF9A-1C44-4D5D-89F4-014AB314C46D}
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

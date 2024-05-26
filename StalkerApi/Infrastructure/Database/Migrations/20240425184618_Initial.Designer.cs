@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using StalkerApi.DatabaseConnection;
+using StalkerApi.Infrastructure.Database;
 
 #nullable disable
 
 namespace StalkerApi.Migrations
 {
     [DbContext(typeof(StalkerDbContext))]
-    [Migration("20240525152431_stalker")]
-    partial class stalker
+    [Migration("20240425184618_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

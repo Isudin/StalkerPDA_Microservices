@@ -1,4 +1,4 @@
-﻿namespace StalkerApi;
+﻿namespace StalkerApi.Core.Model;
 
 public class Stalker
 {

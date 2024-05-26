@@ -1,5 +1,5 @@
-using StalkerApi;
-using StalkerApi.DatabaseConnection;
+using StalkerApi.Core.Model;
+using StalkerApi.Infrastructure.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
