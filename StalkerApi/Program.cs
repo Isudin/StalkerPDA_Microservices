@@ -13,26 +13,6 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-GetStalkerById(app);
-GetAllStalkers(app);
-
 app.Run();
+
 return;
-
-void GetStalkerById(IEndpointRouteBuilder webApp)
-{
-	webApp.MapGet("/stalker/{i}", (string i) =>
-	{
-		var stalker = new Stalker();
-		return stalker;
-	});
-}
-
-void GetAllStalkers(IEndpointRouteBuilder webApp)
-{
-	webApp.MapGet("/stalker", () =>
-	{
-		List<Stalker> stalkers = new();
-		return stalkers;
-	});
-}
