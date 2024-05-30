@@ -1,3 +1,4 @@
+using StalkerApi;
 using StalkerApi.Core.Model;
 using StalkerApi.Infrastructure;
 
@@ -12,6 +13,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+app.MapStalkerApi();
 
 app.Run();
 
