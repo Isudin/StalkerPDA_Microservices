@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StalkerApi.Core.Model;
 
-namespace StalkerApi.Infrastructure.Database;
+namespace StalkerApi.Infrastructure;
 
 internal class StalkerDbContext : DbContext
 {
