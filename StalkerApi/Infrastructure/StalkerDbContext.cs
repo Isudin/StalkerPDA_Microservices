@@ -11,6 +11,9 @@ public class StalkerDbContext : DbContext
     {
         var config = new ConfigurationBuilder().AddJsonFile("appsettings.Development.json").Build();
 
-        optionsBuilder.UseNpgsql(config.GetConnectionString("StalkerPGSQL"));
+        optionsBuilder.UseNpgsql(config.GetConnectionString("StalkerPGSQL"), builder =>
+        {
+            builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(5), null);
+        });
     }
 }
