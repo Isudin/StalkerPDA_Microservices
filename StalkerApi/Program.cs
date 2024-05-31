@@ -5,8 +5,8 @@ using StalkerApi.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddEntityFrameworkNpgsql().AddDbContext<StalkerDbContext>();
+builder.Services//.AddEntityFrameworkNpgsql()
+                .AddDbContext<StalkerDbContext>();
 
 var app = builder.Build();
 

@@ -4,3 +4,8 @@ GET {{StalkerApi_HostAddress}}/
 Accept: application/json
 
 ###
+
+GET {{StalkerApi_HostAddress}}/stalker/1
+Accept: application/json
+
+###

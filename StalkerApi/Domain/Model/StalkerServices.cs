@@ -1,6 +1,6 @@
 ﻿namespace StalkerApi.Domain.Model;
 
-internal class StalkerServices(StalkerDbContext context)
+public class StalkerServices(StalkerDbContext context)
 {
-    internal StalkerDbContext Context { get; } = context;
+    public StalkerDbContext Context { get; } = context;
 }

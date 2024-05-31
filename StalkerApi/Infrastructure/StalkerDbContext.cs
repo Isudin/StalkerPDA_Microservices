@@ -3,7 +3,7 @@ using StalkerApi.Core.Model;
 
 namespace StalkerApi.Infrastructure;
 
-internal class StalkerDbContext : DbContext
+public class StalkerDbContext : DbContext
 {
     internal DbSet<Stalker> Stalkers { get; set; }
 
