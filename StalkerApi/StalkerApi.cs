@@ -13,11 +13,11 @@ public static class StalkerApi
         app.MapGet("stalker/byLocation/{locationId:int}", GetNearbyStalkersAsync);
     }
 
-    private static async Task<Results<Ok<Stalker>, NotFound>> GetStalkerAsync([AsParameters] StalkerServices stalkerServices, int id)
+    private static async Task<Results<Ok<Stalker>, NotFound<string>>> GetStalkerAsync([AsParameters] StalkerServices stalkerServices, int id)
     {
         var stalker = await stalkerServices.Context.Stalkers.FindAsync(id);
         if (stalker == null)
-            return TypedResults.NotFound();
+            return TypedResults.NotFound("Stalker not found.");
 
         return TypedResults.Ok(stalker);
     }
