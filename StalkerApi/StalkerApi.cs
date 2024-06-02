@@ -12,6 +12,7 @@ public static class StalkerApi
         app.MapGet("stalker/{id:int}", GetStalkerAsync);
         app.MapGet("stalker/byLocation/{locationId:int}", GetNearbyStalkersAsync);
         app.MapPost("stalker", PostStalkerAsync);
+        app.MapPut("stalker", UpdateStalkerAsync);
     }
 
     private static async Task<Results<Ok<Stalker>, NotFound<string>>> GetStalkerAsync([AsParameters] StalkerServices stalkerServices, int id)
@@ -48,6 +49,20 @@ public static class StalkerApi
         };
 
         stalkerServices.Context.Add(localStalker);
+        await stalkerServices.Context.SaveChangesAsync();
+
+        return TypedResults.Created($"stalker/{stalker.Id}");
+    }
+
+    private static async Task<Results<Created, NotFound<string>>> UpdateStalkerAsync([AsParameters] StalkerServices stalkerServices,
+        Stalker stalker)
+    {
+        var stalkerFromDatabase = await stalkerServices.Context.Stalkers.SingleOrDefaultAsync();
+        if (stalkerFromDatabase == null)
+            return TypedResults.NotFound($"Stalker with ID {stalkerFromDatabase} not found.");
+
+        var stalkerEntry = stalkerServices.Context.Entry(stalkerFromDatabase);
+        stalkerEntry.CurrentValues.SetValues(stalker);
         await stalkerServices.Context.SaveChangesAsync();
 
         return TypedResults.Created($"stalker/{stalker.Id}");
