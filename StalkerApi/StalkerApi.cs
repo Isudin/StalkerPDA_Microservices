@@ -11,6 +11,7 @@ public static class StalkerApi
     {
         app.MapGet("stalker/{id:int}", GetStalkerAsync);
         app.MapGet("stalker/byLocation/{locationId:int}", GetNearbyStalkersAsync);
+        app.MapPost("stalker", PostStalkerAsync);
     }
 
     private static async Task<Results<Ok<Stalker>, NotFound<string>>> GetStalkerAsync([AsParameters] StalkerServices stalkerServices, int id)
@@ -25,5 +26,30 @@ public static class StalkerApi
     private static async Task<List<Stalker>> GetNearbyStalkersAsync([AsParameters] StalkerServices stalkerServices, int locationId)
     {
         return await stalkerServices.Context.Stalkers.Where(x => x.CurrentLocationID == locationId).ToListAsync();
+    }
+
+    private static async Task<Results<Created, BadRequest<string>>> PostStalkerAsync([AsParameters] StalkerServices stalkerServices, 
+        Stalker stalker)
+    {
+        if (stalker.Name == null)
+            return TypedResults.BadRequest("Name is required.");
+
+        if (stalker.CurrentLocationID < 1)
+            return TypedResults.BadRequest("CurrentLocationID is required.");
+        
+        var localStalker = new Stalker()
+        {
+            CurrentLocationID = stalker.CurrentLocationID,
+            Status = stalker.Status,
+            Surname = stalker.Surname,
+            Name = stalker.Name,
+            Nickname = stalker.Nickname,
+            ReputationPoints = stalker.ReputationPoints,
+        };
+
+        stalkerServices.Context.Add(localStalker);
+        await stalkerServices.Context.SaveChangesAsync();
+
+        return TypedResults.Created($"stalker/{stalker.Id}");
     }
 }
