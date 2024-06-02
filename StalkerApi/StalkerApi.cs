@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
-using StalkerApi.Core.Model;
-using StalkerApi.Domain.Model;
 
 namespace StalkerApi;
 
