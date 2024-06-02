@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TasksApi.Domain.Model;
 
 namespace TasksApi.Infrastructure
 {
     public class TasksDbContext : DbContext
     {
-        internal DbSet<Task> Tasks { get; set;}
+        internal DbSet<Errand> Tasks { get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
