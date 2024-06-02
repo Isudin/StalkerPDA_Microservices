@@ -11,8 +11,8 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
-//Map redirections
+app.MapTasksApi();
 
 app.Run();
