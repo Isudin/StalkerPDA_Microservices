@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StalkerApi.Core.Model;
 
 namespace StalkerApi.Infrastructure;
 

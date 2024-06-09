@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MongoDB.EntityFrameworkCore.Extensions;
 using TasksApi.Domain.Model;
 
 namespace TasksApi.Infrastructure
@@ -13,6 +14,12 @@ namespace TasksApi.Infrastructure
 
             optionsBuilder.UseMongoDB(config.GetConnectionString("StalkerMongoDb")!,
                 config.GetSection("DatabaseNames")["StalkerMongoDb"]!);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Errand>().ToCollection("Errands");
         }
     }
 }
